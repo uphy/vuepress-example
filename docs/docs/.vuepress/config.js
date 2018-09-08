@@ -7,12 +7,18 @@ module.exports = {
             { text: 'Sub directory', link: '/subdir/' },
             { text: 'External', link: 'https://google.com' },
         ],
-        sidebar: [
-            ['/Introduction', 'Introduction'],
-            ['/GettingStarted', 'Getting Started'],
-            ['/ComponentExample', 'Component Example'],
-            ['/PlantUMLExample', 'PlantUML Example']
-        ]
+        sidebar: {
+            "/subdir/": [
+                ['/subdir/', 'Sub Directory'],
+                ['/subdir/foo', 'Foo']
+            ],
+            "/": [
+                ['/introduction', 'Introduction'],
+                ['/getting-started', 'Getting Started'],
+                ['/component-example', 'Component Example'],
+                ['/plantuml-example', 'PlantUML Example']
+            ]
+        }
     },
     base: "/vuepress-example/",
     markdown: {
