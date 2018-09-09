@@ -7,13 +7,23 @@ cache:
   - docs/node_modules
 
 script:
+  # Build a docker image contains 'hello' command
+  - docker build -t uphy/vuepress-example .
+  # Build docs
   - docker run --rm -v "$(pwd)/docs:/docs" node:8 bash -c "cd /docs && yarn && pwd && yarn build"
 
 deploy:
-  provider: pages
-  github-token: $GITHUB_TOKEN
-  local-dir: docs/docs/.vuepress/dist
-  target-branch: gh-pages
-  skip_cleanup: true
-  on:
-    branch: master
+  # Deploy docker image to Docker Hub
+  - provider: script
+    script: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin && docker push uphy/vuepress-example
+    skip_cleanup: true
+    on:
+      branch: master
+  # Deploy docs to GitHub Pages
+  - provider: pages
+    github-token: $GITHUB_TOKEN
+    local-dir: docs/docs/.vuepress/dist
+    target-branch: gh-pages
+    skip_cleanup: true
+    on:
+      branch: master
