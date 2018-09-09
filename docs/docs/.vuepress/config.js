@@ -11,6 +11,10 @@ module.exports = {
             description: 'VuePressの例です。',
         }
     },
+    head: [
+        ['link', { rel: 'icon', href: `/icon.png` }],
+        ['meta', { name: 'theme-color', content: '#075fa9' }]
+    ],
     themeConfig: {
         locales: {
             "/": {
@@ -53,6 +57,11 @@ module.exports = {
                     ]
                 }
             }
+        },
+        algolia: {
+            appId: "9C8M17C3B5",
+            apiKey: "8e885406d82049ded59f013a5d972c5f",
+            indexName: "test_vuepress_example"
         }
     },
     base: "/vuepress-example/",
