@@ -15,3 +15,9 @@ You can also specify your name with the first argument.
 $ hello uphy
 Hello uphy
 ```
+
+@startuml
+actor User
+component hello
+User -> hello: USERNAME
+@enduml

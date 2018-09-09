@@ -13,5 +13,10 @@ module.exports = {
             ["/getting-started", "Getting Started"]
         ]
     },
-    base: "/vuepress-example/"
+    base: "/vuepress-example/",
+    markdown: {
+        config: md => {
+            md.use(require('markdown-it-plantuml'))
+        }
+    }
 }
