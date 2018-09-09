@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"os"
+)
 
 func main() {
-	fmt.Println("Hello")
+	var name string
+	if len(os.Args) > 1 {
+		name = os.Args[1]
+	}
+	fmt.Printf("Hello %s\n", name)
 }

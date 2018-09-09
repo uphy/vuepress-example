@@ -8,3 +8,10 @@ Download from [GitHub Releases](https://github.com/uphy/vuepress-example/release
 $ hello
 Hello
 ```
+
+You can also specify your name with the first argument.
+
+```console
+$ hello uphy
+Hello uphy
+```
