@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "deploy": "./deploy.sh"
+    "build": "vuepress build docs",
+    "deploy": "./deploy.sh"    
   },
   "devDependencies": {
     "markdown-it-plantuml": "^1.2.0",
