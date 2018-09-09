@@ -11,7 +11,12 @@ module.exports = {
         ],
         sidebar: [
             ["/getting-started", "Getting Started"]
-        ]
+        ],
+        algolia: {
+            appId: "9C8M17C3B5",
+            apiKey: "8e885406d82049ded59f013a5d972c5f",
+            indexName: "test_vuepress_example"
+        }
     },
     base: "/vuepress-example/",
     markdown: {
