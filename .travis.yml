@@ -1,0 +1,20 @@
+language: go
+
+go:
+  - "1.11.x"
+
+go_import_path: github.com/uphy/vuepress-example
+
+script:
+  - make package
+
+deploy:
+  - deploy:
+    provider: releases
+    skip_cleanup: true
+    api_key: $GITHUB_TOKEN
+    file_glob: true
+    file: '$TRAVIS_BUILD_DIR/dist/*'
+    overwrite: true
+    on:
+      tags: true
