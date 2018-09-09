@@ -1,14 +1,25 @@
-language: go
+sudo: required
 
+language: go
 go:
   - "1.11.x"
-
 go_import_path: github.com/uphy/vuepress-example
 
+services:
+  - docker
+
+cache:
+  directories:
+  - docs/node_modules
+
 script:
+  # Build binary
   - make package
+  # Build docs
+  - docker run --rm -v "$(pwd)/docs:/docs" node:8 bash -c "cd /docs && yarn && yarn build"
 
 deploy:
+  # Deploy binary release to GitHub Releases page
   - deploy:
     provider: releases
     skip_cleanup: true
@@ -18,3 +29,11 @@ deploy:
     overwrite: true
     on:
       tags: true
+  # Deploy docs to GitHub Pages
+  - provider: pages
+    github-token: $GITHUB_TOKEN
+    local-dir: docs/.vuepress/dist
+    target-branch: gh-pages
+    skip_cleanup: true
+    on:
+      branch: master
