@@ -1,3 +1,9 @@
+---
+title: Getting Started
+description: Show you how to install and use 'hello' command.
+---
+<Title />
+
 ## Installation
 
 Download from [GitHub Releases](https://github.com/uphy/vuepress-example/releases) and extract the binary.
