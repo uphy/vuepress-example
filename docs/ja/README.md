@@ -2,7 +2,7 @@
 home: true
 heroImage: /hero.png
 actionText: 導入 →
-actionLink: /getting-started
+actionLink: /ja/getting-started
 features:
 - title: "'Hello'と出力"
   details: "たった1コマンドでコンソールに'Hello'と出力します。"

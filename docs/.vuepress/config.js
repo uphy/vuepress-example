@@ -17,21 +17,25 @@ module.exports = {
     themeConfig: {
         locales: {
             "/": {
+                label: 'English',
                 nav: [
                     { text: 'Home', link: '/' },
                     { text: 'GitHub', link: 'https://github.com/uphy/vuepress-example/' },
                 ],
                 sidebar: [
-                    ["/getting-started", "Getting Started"]
+                    ["/getting-started", "Getting Started"],
+                    ["/changelog", "Change Log"]
                 ]
             },
             "/ja/": {
+                label: '日本語',
                 nav: [
                     { text: 'ホーム', link: '/ja/' },
                     { text: 'GitHub', link: 'https://github.com/uphy/vuepress-example/' },
                 ],
                 sidebar: [
-                    ["/getting-started", "導入"]
+                    ["/getting-started", "導入"],
+                    ["/changelog", "変更履歴"]
                 ]
             },
         },
