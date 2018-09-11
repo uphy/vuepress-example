@@ -5,7 +5,7 @@
             <h2>{{item.date}} {{item.version}}
                 <Badge v-if="item.beta" text="beta" />
             </h2>
-            {{ item.description }}
+            <Markdown :text="item.description" />
         </div>
         <Content/>
     </div>
