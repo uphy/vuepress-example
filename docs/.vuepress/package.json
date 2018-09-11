@@ -2,8 +2,8 @@
   "name": "docs",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vuepress dev",
-    "build": "vuepress build"
+    "dev": "vuepress dev ..",
+    "build": "vuepress build .."
   },
   "devDependencies": {
     "markdown-it-plantuml": "^1.2.0",
