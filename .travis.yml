@@ -10,13 +10,13 @@ services:
 
 cache:
   directories:
-  - docs/node_modules
+  - docs/.vuepress/node_modules
 
 script:
   # Build binary
   - make package
   # Build docs
-  - docker run --rm -v "$(pwd)/docs:/docs" node:8 bash -c "cd /docs && yarn && yarn build"
+  - docker run --rm -v "$(pwd)/docs:/docs" node:8 bash -c "cd /docs/.vuepress && yarn && yarn build"
 
 deploy:
   # Deploy binary release to GitHub Releases page
